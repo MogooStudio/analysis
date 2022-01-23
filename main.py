@@ -7,7 +7,7 @@ import datetime
 
 
 unit = 100000000.0  # 市值单位
-h_value = 1000  # 高估值的默认值
+h_value = 1000000 * unit  # 高估值的默认值
 e_pe, e_pb, e_value = range(3)  # 指标枚举
 e_data, e_code, e_close, e_ttm_pe, e_ttm_pb = range(5)  # 数据枚举
 e_threshold = {  # 低估值指标阈值
@@ -56,11 +56,12 @@ stock_all = {  # 股票数据
         "601012": {"name": "隆基股份", "type": e_pe, "low": 20, "high": h_value},
         "300015": {"name": "爱尔眼科", "type": e_pe, "low": 70, "high": h_value},
         "601155": {"name": "新城控股", "type": e_pe, "low": 4.5, "high": h_value},
-        "600298": {"name": "安琪酵母", "type": e_pe, "low": 0, "high": h_value},
+        "600298": {"name": "安琪酵母", "type": e_pe, "low": 27, "high": h_value},
         "002352": {"name": "顺丰控股", "type": e_pe, "low": 30, "high": h_value},
         "601877": {"name": "正泰电器", "type": e_pe, "low": 14, "high": h_value},
         "000858": {"name": "五粮液", "type": e_pe, "low": 28, "high": h_value},
-        "601225": {"name": "陕西煤业", "type": e_pe, "low": 6.7, "high": h_value},
+        # "601225": {"name": "陕西煤业", "type": e_pe, "low": 6.7, "high": h_value},
+        "601225": {"name": "陕西煤业", "type": e_value, "low": 1100, "high": h_value},
         "601615": {"name": "明阳智能", "type": e_pe, "low": 18, "high": h_value},
         "002271": {"name": "东方雨虹", "type": e_pe, "low": 20, "high": h_value},
         "600085": {"name": "同仁堂", "type": e_pe, "low": 36, "high": h_value},
@@ -74,19 +75,26 @@ stock_all = {  # 股票数据
         "601166": {"name": "兴业银行", "type": e_pb, "low": 0.75, "high": h_value},
         "600989": {"name": "宝丰能源", "type": e_pe, "low": 16, "high": h_value},
         "600383": {"name": "金地集团", "type": e_pe, "low": 6, "high": h_value},
+        "600309": {"name": "万华化学", "type": e_pe, "low": 13, "high": h_value},
+        "002372": {"name": "伟星新材", "type": e_pe, "low": 20, "high": h_value},
+        "603087": {"name": "甘李药业", "type": e_pe, "low": 24, "high": h_value},
+        "600763": {"name": "通策医疗", "type": e_pe, "low": 60, "high": h_value},
+        "300529": {"name": "健帆生物", "type": e_pe, "low": 38, "high": h_value},
+        "002555": {"name": "三七互娱", "type": e_pe, "low": 19, "high": h_value},
+        "000786": {"name": "北新建材", "type": e_value, "low": 500, "high": h_value},
+        "600030": {"name": "中信证券", "type": e_pb, "low": 1.3, "high": h_value},
         # self
-        "002597": {"name": "金禾实业", "type": e_pe, "low": 18, "high": h_value},
-        "000963": {"name": "华东医药", "type": e_pe, "low": 20, "high": h_value},
+        "002597": {"name": "金禾实业", "type": e_pe, "low": 15, "high": h_value},
+        "000963": {"name": "华东医药", "type": e_pe, "low": 18, "high": h_value},
         "002594": {"name": "比亚迪", "type": e_pe, "low": 155, "high": h_value},
-        "603236": {"name": "移远通信","type": e_pe, "low": 92, "high": h_value},
+        "603236": {"name": "移远通信", "type": e_pe, "low": 92, "high": h_value},
         "002791": {"name": "坚朗五金", "type": e_pe, "low": 34, "high": h_value},
         "601658": {"name": "邮储银行", "type": e_pb, "low": 0.8, "high": h_value},
-        # "603986": {"name": "兆易创新", "type": e_pe, "low": 57, "high": h_value},
-        # "603833": {"name": "欧派家居", "type": e_pe, "low": 18, "high": h_value},
-        # "002920": {"name": "德赛西威", "type": e_pe, "low": 18, "high": h_value},
-        # "600745": {"name": "闻泰科技", "type": e_pe, "low": 18, "high": h_value},
-        # "603288": {"name": "海天味业", "type": e_pe, "low": 18, "high": h_value},
-        # "000538": {"name": "云南白药", "type": e_pe, "low": 18, "high": h_value},
+        "603833": {"name": "欧派家居", "type": e_pe, "low": 28, "high": h_value},
+        "002920": {"name": "德赛西威", "type": e_pe, "low": 35, "high": h_value},
+        "600745": {"name": "闻泰科技", "type": e_pe, "low": 44, "high": h_value},
+        "603288": {"name": "海天味业", "type": e_pe, "low": 33, "high": h_value},
+        "000538": {"name": "云南白药", "type": e_pe, "low": 26, "high": h_value},
         # "600600": {"name": "青岛啤酒", "type": e_pe, "low": 18, "high": h_value},
         # "002311": {"name": "海大集团", "type": e_pe, "low": 18, "high": h_value},
         # "600885": {"name": "宏发股份", "type": e_pe, "low": 18, "high": h_value},
@@ -216,4 +224,5 @@ def baostock():
 
 if __name__ == '__main__':
     baostock()
+
 
