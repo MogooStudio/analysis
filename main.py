@@ -16,16 +16,16 @@ e_threshold = {  # 低估值指标阈值
     e_value: 100 * unit,
 }
 
-is_check_today = True
-today = datetime.date.today()  # 查询日期
-delta = is_check_today and 0 or -1  # 日期
+today = datetime.date.today()  # 今天日期
+delta = -1
 if today.weekday() == 6:
-    delta = -2
+    delta = -2  # 如果今天是星期日
 elif today.weekday() == 0:
-    delta = -3
-day = today + datetime.timedelta(days=delta)
-STR_DAY = day.strftime('%Y-%m-%d')  # 查询日期
-print("{0}|{1};{2}|{3}".format(today, today.weekday(), STR_DAY, day.weekday()))
+    delta = -3  # 如果今天是星期一
+day = today + datetime.timedelta(days=delta)  # 查询日期
+STR_DAY = day.strftime('%Y-%m-%d')
+print("delta=", delta)
+print("今天日期：{0}|{1}，查询日期：{2}|{3}".format(today, today.weekday(), STR_DAY, day.weekday()))
 
 
 stock_all = {  # 股票数据
@@ -94,7 +94,6 @@ stock_all = {  # 股票数据
         "002920": {"name": "德赛西威", "type": e_pe, "low": 35, "high": h_value},
         "600745": {"name": "闻泰科技", "type": e_pe, "low": 44, "high": h_value},
         "603288": {"name": "海天味业", "type": e_pe, "low": 33, "high": h_value},
-        "000538": {"name": "云南白药", "type": e_pe, "low": 26, "high": h_value},
         # "600600": {"name": "青岛啤酒", "type": e_pe, "low": 18, "high": h_value},
         # "002311": {"name": "海大集团", "type": e_pe, "low": 18, "high": h_value},
         # "600885": {"name": "宏发股份", "type": e_pe, "low": 18, "high": h_value},
@@ -117,7 +116,6 @@ class Test:
         self.start_date = _data
         self.end_date = _data
         self.data_list = []
-        self.rs = None
 
     # 获取股票市值
     def get_market(self, god):
@@ -135,16 +133,20 @@ class Test:
                                           frequency="d", adjustflag="3")
         if rs.error_code != "0":
             print('query_history_k_data_plus respond error_code:' + rs.error_code)
-            print('query_history_k_data_plus respond  error_msg:' + rs.error_msg)
+            print('query_history_k_data_plus respond error_msg:' + rs.error_msg)
         while (rs.error_code == '0') & rs.next():
             self.data_list.append(rs.get_row_data())
-        self.rs = rs
 
-    def test(self, god):
+    def getCode(self, code):
+        god = "sh" if code and code[0] == "6" else "sz"
+        return god + "." + code
+
+    def test(self, code):
+        god = self.getCode(code)
         rs = bs.query_history_k_data_plus(god,
                                           "date,code,close,peTTM,psTTM",
                                           start_date=self.start_date, end_date=self.end_date,
-                                          frequency="d", adjustflag="3")  # frequency="d"取日k线，adjustflag="3"默认不复权
+                                          frequency="d", adjustflag="3")
         data_list = []
         while (rs.error_code == '0') & rs.next():
             data_list.append(rs.get_row_data())
@@ -152,9 +154,8 @@ class Test:
         print(result)
 
     def run(self):
-        for code, data in stock_all.items():
-            god = "sh" if code[0] == "6" else "sz"
-            god = god + "." + code
+        for code, _ in stock_all.items():
+            god = self.getCode(code)
             print("获取股票代码数据:{0}".format(god))
             self.get_TTM(god)
 
@@ -218,7 +219,7 @@ def baostock():
         print('login respond  error_msg:' + lg.error_msg)
     ts = Test(STR_DAY)
     ts.run()
-    # ts.test("sz.002271")
+    # ts.test("600887")
     bs.logout()
 
 
