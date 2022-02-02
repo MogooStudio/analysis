@@ -1,9 +1,10 @@
-import time
-
 import baostock as bs
 import akshare as ak
 import pandas as pd
 import datetime
+import smtplib
+from email.mime.text import MIMEText
+import base64
 
 
 unit = 100000000.0  # 市值单位
@@ -15,8 +16,15 @@ e_threshold = {  # 低估值指标阈值
     e_pb: 0.5,
     e_value: 100 * unit,
 }
+_log_name = "stock_data.txt"
+is_send_email = True
+
+# 指定日期
+_date_time = datetime.date(2022, 1, 29)
 
 today = datetime.date.today()  # 今天日期
+if today > _date_time:
+    today = _date_time
 delta = -1
 if today.weekday() == 6:
     delta = -2  # 如果今天是星期日
@@ -207,19 +215,23 @@ class Test:
         def takeTTMDiff(elem):
             return elem["ttm_diff"]
 
-        print("########################################################################")
-        print("#                           筛选低估值的股票                              #")
-        print("########################################################################")
+        if len(low_code) < 1:
+            raise Exception("数据有问题，data=", low_code)
+
+        fw = open(_log_name, "w+", encoding="utf-8")
+        fw.write("# 筛选低估值的股票\n")
         low_code.sort(key=takeTTMDiff)
         for data in low_code:
-            print("\t股票:{0}\t代码:{1}\t当前值:{2}\t低估值:{3}\t还差:{4}".format(data["name"], data["code"], data["ttm_current"], data["ttm_low"], data["ttm_diff"]))
-        print("########################################################################")
-        print("#                           剔除估值高的股票                              #")
-        print("########################################################################")
+            fw.write("股票:{0}\t代码:{1}\t当前值:{2}\t低估值:{3}\t还差:{4}\n".format(data["name"], data["code"], data["ttm_current"], data["ttm_low"], data["ttm_diff"]))
+
+        fw.write("\n# 剔除估值高的股票\n")
         high_code.sort(reverse=True, key=takeTTMDiff)
-        for data in high_code:
-            print("\t股票:{0}\t代码:{1}\t当前值:{2}\t高估值:{3}\t高出:{4}".format(data["name"], data["code"], data["ttm_current"], data["ttm_high"], data["ttm_diff"]))
-        print("########################################################################")
+        if len(high_code) > 0:
+            for data in high_code:
+                fw.write("股票:{0}\t代码:{1}\t当前值:{2}\t高估值:{3}\t高出:{4}\n".format(data["name"], data["code"], data["ttm_current"], data["ttm_high"], data["ttm_diff"]))
+        else:
+            fw.write("无")
+        fw.close()
 
 
 def baostock():
@@ -233,7 +245,43 @@ def baostock():
     bs.logout()
 
 
+def email():
+    # 信息
+    mail_host = 'smtp.163.com'
+    mail_user = 'dadalepai'
+    mail_pass = str(base64.b64decode("TkNHWUNHUExKSUpWUEpOVw=="), "utf-8")
+
+    sender = 'dadalepai@163.com'
+    receivers = ['1040392895@qq.com']
+
+    fr = open(_log_name, "r+", encoding="utf-8")
+    content = fr.read()
+    fr.close()
+
+    if len(content) < 1:
+        raise Exception("读取内容错误")
+
+    # 邮件内容设置
+    message = MIMEText(content, 'plain', 'utf-8')
+    # 邮件主题
+    message['Subject'] = "[{0}]股票分析".format(today)
+    # 发送方信息
+    message['From'] = sender
+    # 接受方信息
+    message['To'] = receivers[0]
+
+    # 登录并发送邮件
+    try:
+        smtpObj = smtplib.SMTP_SSL(mail_host, 465)
+        smtpObj.login(mail_user, mail_pass)
+        smtpObj.sendmail(sender, receivers, message.as_string())
+        smtpObj.quit()
+        print('success')
+    except smtplib.SMTPException as e:
+        print('error', e)  # 打印错误
+
+
 if __name__ == '__main__':
     baostock()
-
-
+    if is_send_email:
+        email()
