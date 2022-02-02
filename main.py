@@ -20,11 +20,12 @@ _log_name = "stock_data.txt"
 is_send_email = True
 
 # 指定日期
-_date_time = datetime.date(2022, 1, 29)
+_date_time_a = datetime.date(2022, 1, 29)
+_date_time_b = datetime.date(2022, 2, 7)
 
 today = datetime.date.today()  # 今天日期
-if today > _date_time:
-    today = _date_time
+if _date_time_b > today > _date_time_a:
+    today = _date_time_a
 delta = -1
 if today.weekday() == 6:
     delta = -2  # 如果今天是星期日
