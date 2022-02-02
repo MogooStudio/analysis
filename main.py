@@ -5,6 +5,7 @@ import datetime
 import smtplib
 from email.mime.text import MIMEText
 import base64
+import time
 
 
 unit = 100000000.0  # 市值单位
@@ -17,9 +18,9 @@ e_threshold = {  # 低估值指标阈值
     e_value: 100 * unit,
 }
 _log_name = "stock_data.txt"
-is_send_email = True
+is_send_email = False
 
-# 指定日期
+# 指定日期区间
 _date_time_a = datetime.date(2022, 1, 29)
 _date_time_b = datetime.date(2022, 2, 7)
 
@@ -104,6 +105,11 @@ stock_all = {  # 股票数据
         "603606": {"name": "东方电缆", "type": e_pe, "low": 25, "high": h_value},
         "603288": {"name": "海天味业", "type": e_pe, "low": 50, "high": h_value},
         "600809": {"name": "山西汾酒", "type": e_pe, "low": 34, "high": h_value},
+        "002007": {"name": "华兰生物", "type": e_pe, "low": 30, "high": h_value},
+        "600176": {"name": "中国巨石", "type": e_pe, "low": 15, "high": h_value},
+        "600660": {"name": "福耀玻璃", "type": e_pe, "low": 15, "high": h_value},
+        "601865": {"name": "福莱特", "type": e_pe, "low": 30, "high": h_value},
+        "002410": {"name": "广联达", "type": e_pe, "low": 70, "high": h_value},
         # self
         "002597": {"name": "金禾实业", "type": e_pe, "low": 22, "high": h_value},
         "000963": {"name": "华东医药", "type": e_pe, "low": 21, "high": h_value},
@@ -117,7 +123,6 @@ stock_all = {  # 股票数据
         "600600": {"name": "青岛啤酒", "type": e_pe, "low": 33, "high": h_value},
         "002311": {"name": "海大集团", "type": e_pe, "low": 38, "high": h_value},
         "600885": {"name": "宏发股份", "type": e_pe, "low": 28, "high": h_value},
-        "002410": {"name": "广联达", "type": e_pe, "low": 60, "high": h_value},
         "002032": {"name": "苏泊尔", "type": e_pe, "low": 22, "high": h_value},
         "600845": {"name": "宝信软件", "type": e_pe, "low": 38, "high": h_value},
         "002557": {"name": "洽洽食品", "type": e_pe, "low": 23, "high": h_value},
@@ -242,7 +247,7 @@ def baostock():
         print('login respond  error_msg:' + lg.error_msg)
     ts = Test(STR_DAY)
     ts.run()
-    # ts.test("600887")
+    ts.test("600438")
     bs.logout()
 
 
@@ -265,7 +270,8 @@ def email():
     # 邮件内容设置
     message = MIMEText(content, 'plain', 'utf-8')
     # 邮件主题
-    message['Subject'] = "[{0}]股票分析".format(today)
+    _time_now = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+    message['Subject'] = "[{0}]股票分析".format(_time_now)
     # 发送方信息
     message['From'] = sender
     # 接受方信息
