@@ -18,7 +18,7 @@ e_threshold = {  # 低估值指标阈值
     e_value: 100 * unit,
 }
 _log_name = "stock_data.txt"
-is_send_email = True
+is_send_email = False
 
 # 指定日期区间
 _date_time_a = datetime.date(2022, 1, 29)
@@ -110,6 +110,8 @@ stock_all = {  # 股票数据
         "600660": {"name": "福耀玻璃", "type": e_pe, "low": 15, "high": h_value},
         "601865": {"name": "福莱特", "type": e_pe, "low": 30, "high": h_value},
         "002410": {"name": "广联达", "type": e_pe, "low": 70, "high": h_value},
+        "300059": {"name": "东方财富", "type": e_pb, "low": 5, "high": h_value},
+        "002821": {"name": "凯莱英", "type": e_pe, "low": 57, "high": h_value},
         # self
         "002597": {"name": "金禾实业", "type": e_pe, "low": 22, "high": h_value},
         "000963": {"name": "华东医药", "type": e_pe, "low": 21, "high": h_value},
