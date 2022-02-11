@@ -18,7 +18,7 @@ e_threshold = {  # 低估值指标阈值
     e_value: 100 * unit,
 }
 _log_name = "stock_data.txt"
-is_send_email = False
+is_send_email = True
 
 # 指定日期区间
 _date_time_a = datetime.date(2022, 1, 29)
