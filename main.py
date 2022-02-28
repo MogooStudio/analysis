@@ -15,7 +15,7 @@ e_data, e_code, e_close, e_ttm_pe, e_ttm_pb = range(5)  # 数据枚举
 e_threshold = {  # 低估值指标阈值
     e_pe: 5,
     e_pb: 0.5,
-    e_value: 100 * unit,
+    e_value: 500 * unit,
 }
 _log_name = "stock_data.txt"
 is_send_email = True
@@ -81,7 +81,6 @@ stock_all = {  # 股票数据
         "600332": {"name": "白云山", "type": e_pe, "low": 14, "high": h_value},
         "300595": {"name": "欧普康视", "type": e_pe, "low": 48, "high": h_value},
         "600905": {"name": "三峡能源", "type": e_pe, "low": 35, "high": h_value},
-        "603127": {"name": "昭衍新药", "type": e_pe, "low": 60, "high": h_value},
         "601166": {"name": "兴业银行", "type": e_pb, "low": 0.75, "high": h_value},
         "600989": {"name": "宝丰能源", "type": e_pe, "low": 16, "high": h_value},
         "600383": {"name": "金地集团", "type": e_pe, "low": 6, "high": h_value},
@@ -109,24 +108,23 @@ stock_all = {  # 股票数据
         "600660": {"name": "福耀玻璃", "type": e_pe, "low": 15, "high": h_value},
         "601865": {"name": "福莱特", "type": e_pe, "low": 30, "high": h_value},
         "002410": {"name": "广联达", "type": e_pe, "low": 70, "high": h_value},
-        "300059": {"name": "东方财富", "type": e_pb, "low": 5, "high": h_value},
+        "300059": {"name": "东方财富", "type": e_pb, "low": 5.5, "high": h_value},
         "002821": {"name": "凯莱英", "type": e_pe, "low": 57, "high": h_value},
         "600900": {"name": "长江电力", "type": e_pe, "low": 15, "high": h_value},
         "300896": {"name": "爱美客", "type": e_pe, "low": 80, "high": h_value},
         "002791": {"name": "坚朗五金", "type": e_pe, "low": 36, "high": h_value},
         "000002": {"name": "万科A", "type": e_pe, "low": 6, "high": h_value},
         "000049": {"name": "德赛电池", "type": e_pe, "low": 15, "high": h_value},
+        "600323": {"name": "瀚蓝环境", "type": e_pe, "low": 13, "high": h_value},
+        "600305": {"name": "恒顺醋业", "type": e_pe, "low": 32, "high": h_value},
+        "603127": {"name": "昭衍新药", "type": e_pe, "low": 56, "high": h_value},
         # self
         # "600009": {"name": "上海机场", "type": e_pe, "low": 0, "high": h_value},
         # "600754": {"name": "锦江酒店", "type": e_pe, "low": 0, "high": h_value},
         "002597": {"name": "金禾实业", "type": e_pe, "low": 22, "high": h_value},
         "000963": {"name": "华东医药", "type": e_pe, "low": 21, "high": h_value},
         "002594": {"name": "比亚迪", "type": e_pe, "low": 155, "high": h_value},
-        "603236": {"name": "移远通信", "type": e_pe, "low": 85, "high": h_value},
-        "601658": {"name": "邮储银行", "type": e_pb, "low": 0.8, "high": h_value},
-        "603833": {"name": "欧派家居", "type": e_pe, "low": 28, "high": h_value},
         "002920": {"name": "德赛西威", "type": e_pe, "low": 72, "high": h_value},
-        "600745": {"name": "闻泰科技", "type": e_pe, "low": 44, "high": h_value},
         "600600": {"name": "青岛啤酒", "type": e_pe, "low": 30, "high": h_value},
         "002311": {"name": "海大集团", "type": e_pe, "low": 38, "high": h_value},
         "600885": {"name": "宏发股份", "type": e_pe, "low": 28, "high": h_value},
@@ -136,10 +134,11 @@ stock_all = {  # 股票数据
         "603939": {"name": "益丰药房", "type": e_pe, "low": 38, "high": h_value},
         "000651": {"name": "格力电器", "type": e_pe, "low": 9, "high": h_value},
         "002056": {"name": "横店东磁", "type": e_pe, "low": 18, "high": h_value},
-        "000672": {"name": "上峰水泥", "type": e_pe, "low": 7, "high": h_value},
         "002841": {"name": "视源股份", "type": e_pe, "low": 30, "high": h_value},
         "603882": {"name": "金域医学", "type": e_pe, "low": 17, "high": h_value},
         "603589": {"name": "口子窖", "type": e_pe, "low": 16, "high": h_value},
+        "600048": {"name": "保利发展", "type": e_pe, "low": 6, "high": h_value},
+        "002318": {"name": "久立特材", "type": e_pe, "low": 15, "high": h_value},
     }
 
 
