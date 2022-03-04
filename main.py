@@ -80,7 +80,7 @@ stock_all = {  # 股票数据
         "603369": {"name": "今世缘", "type": e_pe, "low": 23, "high": h_value},
         "600332": {"name": "白云山", "type": e_pe, "low": 14, "high": h_value},
         "300595": {"name": "欧普康视", "type": e_pe, "low": 48, "high": h_value},
-        "600905": {"name": "三峡能源", "type": e_pe, "low": 35, "high": h_value},
+        "600905": {"name": "三峡能源", "type": e_pe, "low": 33, "high": h_value},
         "601166": {"name": "兴业银行", "type": e_pb, "low": 0.75, "high": h_value},
         "600989": {"name": "宝丰能源", "type": e_pe, "low": 16, "high": h_value},
         "600383": {"name": "金地集团", "type": e_pe, "low": 6, "high": h_value},
@@ -118,6 +118,8 @@ stock_all = {  # 股票数据
         "600323": {"name": "瀚蓝环境", "type": e_pe, "low": 13, "high": h_value},
         "600305": {"name": "恒顺醋业", "type": e_pe, "low": 32, "high": h_value},
         "603127": {"name": "昭衍新药", "type": e_pe, "low": 56, "high": h_value},
+        "601088": {"name": "中国神华", "type": e_pe, "low": 8, "high": h_value},
+        "601966": {"name": "玲珑轮胎", "type": e_pe, "low": 18, "high": h_value},
         # self
         # "600009": {"name": "上海机场", "type": e_pe, "low": 0, "high": h_value},
         # "600754": {"name": "锦江酒店", "type": e_pe, "low": 0, "high": h_value},
