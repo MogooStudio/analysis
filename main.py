@@ -112,7 +112,7 @@ stock_all = {  # 股票数据
         "002821": {"name": "凯莱英", "type": e_pe, "low": 57, "high": h_value},
         "600900": {"name": "长江电力", "type": e_pe, "low": 15, "high": h_value},
         "300896": {"name": "爱美客", "type": e_pe, "low": 80, "high": h_value},
-        "002791": {"name": "坚朗五金", "type": e_pe, "low": 36, "high": h_value},
+        "002791": {"name": "坚朗五金", "type": e_pe, "low": 24, "high": h_value},
         "000002": {"name": "万科A", "type": e_pe, "low": 6, "high": h_value},
         "000049": {"name": "德赛电池", "type": e_pe, "low": 15, "high": h_value},
         "600323": {"name": "瀚蓝环境", "type": e_pe, "low": 13, "high": h_value},
@@ -120,6 +120,9 @@ stock_all = {  # 股票数据
         "603127": {"name": "昭衍新药", "type": e_pe, "low": 56, "high": h_value},
         "601088": {"name": "中国神华", "type": e_pe, "low": 8, "high": h_value},
         "601966": {"name": "玲珑轮胎", "type": e_pe, "low": 18, "high": h_value},
+        "002677": {"name": "浙江美大", "type": e_pe, "low": 14, "high": h_value},
+        "300750": {"name": "宁德时代", "type": e_pe, "low": 40, "high": h_value},
+        "600690": {"name": "海尔智家", "type": e_pe, "low": 13, "high": h_value},
         # self
         # "600009": {"name": "上海机场", "type": e_pe, "low": 0, "high": h_value},
         # "600754": {"name": "锦江酒店", "type": e_pe, "low": 0, "high": h_value},
