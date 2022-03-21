@@ -41,7 +41,7 @@ print("今天日期：{0}|{1}，查询日期：{2}|{3}".format(today, today.week
 stock_all = {  # 股票数据
         # wx
         "002714": {"name": "牧原股份", "type": e_value, "low": 2500*unit, "high": 6000*unit},
-        "600036": {"name": "招商银行", "type": e_pb, "low": 1.5, "high": h_value},
+        "600036": {"name": "招商银行", "type": e_pb, "low": 1.5, "high": 2.1},
         "603899": {"name": "晨光文具", "type": e_pe, "low": 32, "high": h_value},
         "601100": {"name": "恒立液压", "type": e_pe, "low": 34, "high": h_value},
         "603195": {"name": "公牛集团", "type": e_pe, "low": 30, "high": h_value},
@@ -88,7 +88,7 @@ stock_all = {  # 股票数据
         "002372": {"name": "伟星新材", "type": e_pe, "low": 20, "high": h_value},
         "603087": {"name": "甘李药业", "type": e_pe, "low": 24, "high": h_value},
         "600763": {"name": "通策医疗", "type": e_pe, "low": 60, "high": h_value},
-        "300529": {"name": "健帆生物", "type": e_pe, "low": 38, "high": h_value},
+        "300529": {"name": "健帆生物", "type": e_pe, "low": 32, "high": h_value},
         "002555": {"name": "三七互娱", "type": e_pe, "low": 19, "high": h_value},
         "000786": {"name": "北新建材", "type": e_value, "low": 500*unit, "high": h_value},
         "600030": {"name": "中信证券", "type": e_pb, "low": 1.3, "high": h_value},
@@ -118,11 +118,13 @@ stock_all = {  # 股票数据
         "600323": {"name": "瀚蓝环境", "type": e_pe, "low": 13, "high": h_value},
         "600305": {"name": "恒顺醋业", "type": e_pe, "low": 32, "high": h_value},
         "603127": {"name": "昭衍新药", "type": e_pe, "low": 56, "high": h_value},
-        "601088": {"name": "中国神华", "type": e_pe, "low": 8, "high": h_value},
+        "601088": {"name": "中国神华", "type": e_pe, "low": 8.5, "high": h_value},
         "601966": {"name": "玲珑轮胎", "type": e_pe, "low": 18, "high": h_value},
         "002677": {"name": "浙江美大", "type": e_pe, "low": 14, "high": h_value},
         "300750": {"name": "宁德时代", "type": e_pe, "low": 40, "high": h_value},
         "600690": {"name": "海尔智家", "type": e_pe, "low": 13, "high": h_value},
+        "002507": {"name": "涪陵榨菜", "type": e_pe, "low": 30, "high": h_value},
+        "002508": {"name": "老板电器", "type": e_pe, "low": 14, "high": h_value},
         # self
         # "600009": {"name": "上海机场", "type": e_pe, "low": 0, "high": h_value},
         # "600754": {"name": "锦江酒店", "type": e_pe, "low": 0, "high": h_value},
