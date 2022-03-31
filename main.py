@@ -129,6 +129,7 @@ stock_all = {  # 股票数据
         "688169": {"name": "石头科技", "type": e_pe, "low": 22, "high": h_value},
         "600183": {"name": "生益科技", "type": e_pe, "low": 20, "high": h_value},
         "000001": {"name": "平安银行", "type": e_pb, "low": 0.8, "high": h_value},
+        "600137": {"name": "浪姿股份", "type": e_pe, "low": 36, "high": h_value},
         # self
         # "600009": {"name": "上海机场", "type": e_pe, "low": 0, "high": h_value},
         # "600754": {"name": "锦江酒店", "type": e_pe, "low": 0, "high": h_value},
