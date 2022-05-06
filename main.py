@@ -15,7 +15,7 @@ e_data, e_code, e_close, e_ttm_pe, e_ttm_pb = range(5)  # 数据枚举
 e_threshold = {  # 低估值指标阈值
     e_pe: 5,
     e_pb: 0.5,
-    e_value: 500 * unit,
+    e_value: 50 * unit,
 }
 _log_name = "stock_data.txt"
 is_send_email = True
@@ -54,7 +54,7 @@ stock_all = {  # 股票数据
         "300759": {"name": "康龙化成", "type": e_pe, "low": 60, "high": h_value},
         "002241": {"name": "歌尔股份", "type": e_pe, "low": 35, "high": h_value},
         "300347": {"name": "泰格医药", "type": e_pe, "low": 48, "high": h_value},
-        "300274": {"name": "阳光电源", "type": e_pe, "low": 34, "high": h_value},
+        "300274": {"name": "阳光电源", "type": e_pe, "low": 30, "high": h_value},
         "600887": {"name": "伊利股份", "type": e_pe, "low": 25, "high": 35},
         "603486": {"name": "科沃斯", "type": e_pe, "low": 40, "high": h_value},
         "002475": {"name": "立讯精密", "type": e_pe, "low": 32, "high": h_value},
@@ -68,7 +68,7 @@ stock_all = {  # 股票数据
         "601155": {"name": "新城控股", "type": e_pe, "low": 4.5, "high": h_value},
         "600298": {"name": "安琪酵母", "type": e_pe, "low": 27, "high": 43},
         "002352": {"name": "顺丰控股", "type": e_pe, "low": 30, "high": h_value},
-        "601877": {"name": "正泰电器", "type": e_pe, "low": 14, "high": h_value},
+        "601877": {"name": "正泰电器", "type": e_pe, "low": 11, "high": h_value},
         "000858": {"name": "五粮液", "type": e_pe, "low": 28, "high": h_value},
         # "601225": {"name": "陕西煤业", "type": e_pe, "low": 6.7, "high": h_value},
         "601225": {"name": "陕西煤业", "type": e_value, "low": 1100*unit, "high": 2000*unit},
@@ -130,6 +130,8 @@ stock_all = {  # 股票数据
         "600183": {"name": "生益科技", "type": e_pe, "low": 20, "high": h_value},
         "000001": {"name": "平安银行", "type": e_pb, "low": 0.8, "high": h_value},
         "600137": {"name": "浪姿股份", "type": e_pe, "low": 36, "high": h_value},
+        "000830": {"name": "鲁西化工", "type": e_pe, "low": 8, "high": h_value},
+        "002557": {"name": "洽洽食品", "type": e_pe, "low": 23, "high": 35},
         # self
         # "600009": {"name": "上海机场", "type": e_pe, "low": 0, "high": h_value},
         # "600754": {"name": "锦江酒店", "type": e_pe, "low": 0, "high": h_value},
@@ -142,7 +144,6 @@ stock_all = {  # 股票数据
         "600885": {"name": "宏发股份", "type": e_pe, "low": 28, "high": h_value},
         "002032": {"name": "苏泊尔", "type": e_pe, "low": 22, "high": h_value},
         "600845": {"name": "宝信软件", "type": e_pe, "low": 38, "high": h_value},
-        "002557": {"name": "洽洽食品", "type": e_pe, "low": 23, "high": h_value},
         "603939": {"name": "益丰药房", "type": e_pe, "low": 38, "high": h_value},
         "000651": {"name": "格力电器", "type": e_pe, "low": 9, "high": h_value},
         "002056": {"name": "横店东磁", "type": e_pe, "low": 18, "high": h_value},
