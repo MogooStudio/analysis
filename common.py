@@ -26,7 +26,7 @@ stock_all = {  # 股票数据
         "300347": {"name": "泰格医药", "type": e_pe, "low": 48, "high": h_value},
         "300274": {"name": "阳光电源", "type": e_pe, "low": 30, "high": h_value},
         "600887": {"name": "伊利股份", "type": e_pe, "low": 25, "high": 35},
-        "002475": {"name": "立讯精密", "type": e_pe, "low": 32, "high": h_value},
+        "002475": {"name": "立讯精密", "type": e_pe, "low": 28, "high": h_value},
         "002415": {"name": "海康威视", "type": e_pe, "low": 24, "high": h_value},
         "603259": {"name": "药明康德", "type": e_pe, "low": 60, "high": h_value},
         "000333": {"name": "美的集团", "type": e_pe, "low": 15, "high": 25},
@@ -112,6 +112,8 @@ stock_all = {  # 股票数据
         "300699": {"name": "光威复材", "type": e_pe, "low": 33, "high": h_value},
         "002709": {"name": "天赐材料", "type": e_pe, "low": 20, "high": h_value},
         "600196": {"name": "复星医药", "type": e_pe, "low": 21, "high": h_value},
+        "300014": {"name": "亿纬锂能", "type": e_pe, "low": 36, "high": h_value},
+        "000848": {"name": "承德露露", "type": e_pe, "low": 15, "high": h_value},
         # self
         # "600009": {"name": "上海机场", "type": e_pe, "low": 0, "high": h_value},
         # "600754": {"name": "锦江酒店", "type": e_pe, "low": 0, "high": h_value},
@@ -127,9 +129,7 @@ stock_all = {  # 股票数据
         "000651": {"name": "格力电器", "type": e_pe, "low": 9, "high": h_value},
         "002056": {"name": "横店东磁", "type": e_pe, "low": 18, "high": h_value},
         "002841": {"name": "视源股份", "type": e_pe, "low": 30, "high": h_value},
-        "603882": {"name": "金域医学", "type": e_pe, "low": 17, "high": h_value},
         "603589": {"name": "口子窖", "type": e_pe, "low": 16, "high": h_value},
         "600048": {"name": "保利发展", "type": e_pe, "low": 6, "high": h_value},
-        "002318": {"name": "久立特材", "type": e_pe, "low": 15, "high": h_value},
         "603939": {"name": "益丰药房", "type": e_pe, "low": 38, "high": h_value},
     }
