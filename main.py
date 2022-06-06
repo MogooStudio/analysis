@@ -15,21 +15,20 @@ _log_name = "stock_data.txt"
 # 是否发送邮件
 is_send_email = True
 
-# 指定日期区间
-_date_time_a = datetime.date(2022, 1, 29)
-_date_time_b = datetime.date(2022, 2, 7)
+# 查询日期校验
+_date_time_a = datetime.date(2022, 6, 3)
+_date_time_b = datetime.date(2022, 6, 6)
 
 today = datetime.date.today()  # 今天日期
-if _date_time_b > today > _date_time_a:  # 指定日期区间内用左值
+if _date_time_b >= today >= _date_time_a:  # 指定日期区间内用左值
     today = _date_time_a
 
-# 时间间隔
 delta = -1
 if today.weekday() == 6:  # 如果今天是星期日
     delta = -2
 elif today.weekday() == 0:  # 如果今天是星期一
     delta = -3
-# 查询日期
+
 day = today + datetime.timedelta(days=delta)
 STR_DAY = day.strftime('%Y-%m-%d')
 print("delta=", delta)
