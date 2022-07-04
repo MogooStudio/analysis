@@ -90,7 +90,6 @@ class Test:
             real_code = stock_code.split('.')[1]
             code_data = stock_all.get(real_code)
             code_name = code_data["name"]
-            code_score = code_data["score"]
             low_ttm = code_data["low"]
             high_ttm = code_data["high"]
             type_ttm = code_data["type"]
@@ -106,7 +105,6 @@ class Test:
             if diff_low <= value_low:
                 low_code.append({
                     "name": code_name,
-                    "score": code_score,
                     "code": stock_code,
                     "ttm_current": round(float(real_ttm), 2),
                     "ttm_low": low_ttm,
@@ -115,15 +113,11 @@ class Test:
             elif diff_high >= 0:
                 high_code.append({
                     "name": code_name,
-                    "score": code_score,
                     "code": stock_code,
                     "ttm_current": round(float(real_ttm), 2),
                     "ttm_high": high_ttm,
                     "ttm_diff": round(diff_high, 2),
                 })
-
-        def takeDiff(elem):
-            return elem["score"]
 
         def takeTTMDiff(elem):
             return elem["ttm_diff"]
@@ -133,7 +127,7 @@ class Test:
 
         fw = open(_log_name, "w+", encoding="utf-8")
         fw.write("# 筛选低估值的股票\n")
-        low_code.sort(key=takeDiff)
+        low_code.sort(key=takeTTMDiff)
         for data in low_code:
             fw.write("股票:{0}\t代码:{1}\t当前值:{2}\t低估值:{3}\t还差:{4}\n".format(data["name"], data["code"], data["ttm_current"], data["ttm_low"], data["ttm_diff"]))
 
