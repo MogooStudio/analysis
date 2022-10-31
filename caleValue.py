@@ -17,7 +17,31 @@ wly = {
     "pm": 20,
 }
 
-stock_list = [lzlj, wly]
+ymkd = {
+    "name": "药明康德",
+    "totalValue": 2261.77,
+    "value": 76.4,
+    "profit": 99.5,
+    "pm": 25,
+}
+
+hkws = {
+    "name": "海康威视",
+    "totalValue": 2680.92,
+    "value": 28.42,
+    "profit": 174,
+    "pm": 20,
+}
+
+ylgf = {
+    "name": "伊利股份",
+    "totalValue": 1615.2,
+    "value": 25.24,
+    "profit": 98,
+    "pm": 20,
+}
+
+stock_list = [lzlj, wly, ymkd, hkws, ylgf]
 
 # PE
 pe_dict = {
