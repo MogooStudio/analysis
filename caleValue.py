@@ -1,14 +1,12 @@
-# 市值 totalValue
-# 股价 value
-# 利润 profit
-# 净利润率 pm
+
+# 估计计算
 
 lzlj = {
     "name": "泸州老窖",
-    "totalValue": 2301.41,
-    "value": 156.35,
-    "profit": 102,
-    "pm": 20,
+    "totalValue": 2301.41,  # 市值
+    "value": 156.35,        # 股价
+    "profit": 102,          # 净利润
+    "pm": 20,               # 10年平均净利润率
 }
 
 wly = {
@@ -54,13 +52,8 @@ def cale(info):
 
 
 def run():
-    ret = {}
-
     for info in stock_list:
         cale(info)
-
-    #
-    # print(ret1, ret2)
 
 
 if __name__ == '__main__':
