@@ -5,9 +5,15 @@ name: Python application
 
 on:
   push:
+    # push触发
     branches: [ master ]
   schedule:
+    # 定时触发
     - cron:  '0 10 * * *'
+    # 定时器更改时间
+    # https://tool.lu/crontab/
+    # https://datetime360.com/cn/utc-cst-china-time/ #UTC时间 国际协调时间+8=北京时间
+    # https://docs.github.com/cn/actions/using-workflows/workflow-syntax-for-github-actions#onschedule 官方参考
 
 jobs:
   build:
@@ -26,6 +32,6 @@ jobs:
         pip install baostock
         pip install akshare
         # if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: My python
+    - name: Analysis
       run: |
         python main.py

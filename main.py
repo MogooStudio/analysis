@@ -13,7 +13,7 @@ from common import *
 _log_name = "stock_data.txt"
 
 # 是否发送邮件
-is_send_email = True
+is_send_email = False
 
 # 查询日期校验
 _date_time_a = datetime.date(2022, 6, 3)
