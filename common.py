@@ -139,6 +139,7 @@ stock_all = {  # 股票数据
         "002050": {"name": "三花智控", "type": e_pe, "low": 30, "high": h_value},
         "002812": {"name": "恩捷股份", "type": e_pe, "low": 27, "high": h_value},
         "002371": {"name": "北方华创", "type": e_pe, "low": 50, "high": h_value},
+        "600566": {"name": "济川药业", "type": e_pe, "low": 11, "high": h_value},
 
         # self
         # "600009": {"name": "上海机场", "type": e_pe, "low": 0, "high": h_value},
