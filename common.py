@@ -38,7 +38,7 @@ stock_all = {  # 股票数据
         "600298": {"name": "安琪酵母", "type": e_pe, "low": 27, "high": 43},
         "002352": {"name": "顺丰控股", "type": e_pe, "low": 32, "high": h_value},
         "601877": {"name": "正泰电器", "type": e_pe, "low": 14, "high": h_value},
-        "000858": {"name": "五粮液", "type": e_pe, "low": 25, "high": h_value},
+        "000858": {"name": "五粮液", "type": e_pe, "low": 20, "high": h_value},
         "601225": {"name": "陕西煤业", "type": e_value, "low": 1600*unit, "high": 2000*unit},
         "002271": {"name": "东方雨虹", "type": e_pe, "low": 20, "high": h_value},
         "600085": {"name": "同仁堂", "type": e_pe, "low": 36, "high": h_value},
