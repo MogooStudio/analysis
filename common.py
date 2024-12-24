@@ -1,17 +1,12 @@
 
 unit = 100000000.0  # 市值单位
 h_value = 1000000 * unit  # 高估值的默认值
-e_pe, e_pb, e_value = range(3)  # 指标枚举
+e_pe, e_pb, e_value, e_price = range(4)  # 指标枚举
 e_data, e_code, e_close, e_ttm_pe, e_ttm_pb = range(5)  # 数据枚举
-e_threshold = {  # 低估值指标阈值
-    e_pe: 5,
-    e_pb: 0.5,
-    e_value: 10 * unit,
-}
 
 stock_all = {  # 股票数据
         # wx
-        "002714": {"name": "牧原股份", "type": e_value, "low": 2500*unit, "high": 6000*unit},
+        # "002714": {"name": "牧原股份", "type": e_value, "low": 2500*unit, "high": 6000*unit},
         "600036": {"name": "招商银行", "type": e_pb, "low": 1.5, "high": 2.1},
         "603195": {"name": "公牛集团", "type": e_pe, "low": 30, "high": h_value},
         "600276": {"name": "恒瑞医药", "type": e_pe, "low": 40, "high": h_value},
@@ -35,10 +30,10 @@ stock_all = {  # 股票数据
         "603288": {"name": "海天味业", "type": e_pe, "low": 30, "high": h_value},
         "600176": {"name": "中国巨石", "type": e_pe, "low": 15, "high": h_value},
         "600660": {"name": "福耀玻璃", "type": e_pe, "low": 15, "high": h_value},
-        "600900": {"name": "长江电力", "type": e_pe, "low": 15, "high": h_value},
+        "600900": {"name": "长江电力", "type": e_pe, "low": 16, "high": h_value},
         "601088": {"name": "中国神华", "type": e_pe, "low": 8.5, "high": h_value},
         "600690": {"name": "海尔智家", "type": e_pe, "low": 15, "high": h_value},
-        "000001": {"name": "平安银行", "type": e_pb, "low": 1, "high": h_value},
+        # "000001": {"name": "平安银行", "type": e_pb, "low": 1, "high": h_value},
         "002557": {"name": "洽洽食品", "type": e_pe, "low": 23, "high": 35},
         "600612": {"name": "老凤祥", "type": e_pe, "low": 12, "high": h_value},
         "603658": {"name": "安图生物", "type": e_pe, "low": 22, "high": h_value},
@@ -47,4 +42,12 @@ stock_all = {  # 股票数据
         "000651": {"name": "格力电器", "type": e_pe, "low": 8, "high": h_value},
         "601899": {"name": "紫金矿业", "type": e_pe, "low": 11, "high": h_value},
         "000895": {"name": "双汇发展", "type": e_pe, "low": 15, "high": h_value},
+        "300144": {"name": "宋城演艺", "type": e_value, "low": 240*unit, "high": h_value},
+        "600256": {"name": "广汇能源", "type": e_value, "low": 450*unit, "high": h_value},
+        "300015": {"name": "爱尔眼科", "type": e_value, "low": 1100*unit, "high": h_value},
+        "000338": {"name": "潍柴动力", "type": e_pe, "low": 10, "high": h_value},
+        "000001": {"name": "平安银行", "type": e_price, "low": 10, "high": h_value},
+        "002064": {"name": "华峰化学", "type": e_price, "low": 7, "high": h_value},
+        "603259": {"name": "药明康德", "type": e_price, "low": 50, "high": h_value},
+        "002714": {"name": "牧原股份", "type": e_price, "low": 40, "high": h_value},
     }
