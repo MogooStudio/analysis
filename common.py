@@ -37,7 +37,7 @@ stock_all = {  # 股票数据
         "002557": {"name": "洽洽食品", "type": e_pe, "low": 23, "high": 35},
         "600612": {"name": "老凤祥", "type": e_pe, "low": 12, "high": h_value},
         "603658": {"name": "安图生物", "type": e_pe, "low": 22, "high": h_value},
-        "300760": {"name": "迈瑞医疗", "type": e_pe, "low": 28, "high": h_value},
+        # "300760": {"name": "迈瑞医疗", "type": e_pe, "low": 28, "high": h_value},
         "600741": {"name": "华域汽车", "type": e_pe, "low": 8, "high": h_value},
         "000651": {"name": "格力电器", "type": e_pe, "low": 8, "high": h_value},
         "601899": {"name": "紫金矿业", "type": e_pe, "low": 11, "high": h_value},
@@ -50,4 +50,8 @@ stock_all = {  # 股票数据
         "002064": {"name": "华峰化学", "type": e_price, "low": 7, "high": h_value},
         "603259": {"name": "药明康德", "type": e_price, "low": 50, "high": h_value},
         "002714": {"name": "牧原股份", "type": e_price, "low": 40, "high": h_value},
+        "300760": {"name": "迈瑞医疗", "type": e_price, "low": 300, "high": h_value},
+        "600938": {"name": "中国海油", "type": e_pe, "low": 7, "high": h_value},
+        # "00700": {"name": "腾讯控股", "type": e_pe, "low": 20, "high": h_value},
+        # "06160": {"name": "百济神州", "type": e_price, "low": 1400, "high": h_value},
     }
