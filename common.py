@@ -40,6 +40,7 @@ stock_all = {  # 股票数据
         "600938": {"name": "中国海油", "type": e_pe, "low": 7, "high": h_value},
         "603605": {"name": "珀莱雅", "type": e_pe, "low": 20, "high": h_value},
         "002714": {"name": "牧原股份", "type": e_value, "low": 2500*unit, "high": 6000*unit},
+        "300750": {"name": "宁德时代", "type": e_pe, "low": 18, "high": h_value},
         # "03690": {"name": "美团", "type": e_value, "low": 7500*unit, "high": h_value},
         # "09988": {"name": "阿里巴巴", "type": e_pe, "low": 15, "high": h_value},
         # "00700": {"name": "腾讯控股", "type": e_pe, "low": 20, "high": h_value},
