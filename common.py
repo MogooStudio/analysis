@@ -6,7 +6,7 @@ e_data, e_code, e_close, e_ttm_pe, e_ttm_pb = range(5)  # 数据枚举
 
 stock_all = {  # 股票数据
         # wx
-        "600036": {"name": "招商银行", "type": e_pb, "low": 0.8, "high": 2.1},
+        "600036": {"name": "招商银行", "type": e_pb, "low": 0.9, "high": 2.1},
         "603195": {"name": "公牛集团", "type": e_pe, "low": 20, "high": h_value},
         "600276": {"name": "恒瑞医药", "type": e_pe, "low": 40, "high": h_value},
         "600887": {"name": "伊利股份", "type": e_pe, "low": 22, "high": 35},
@@ -30,13 +30,13 @@ stock_all = {  # 股票数据
         "601088": {"name": "中国神华", "type": e_pb, "low": 1, "high": h_value},
         "600690": {"name": "海尔智家", "type": e_pe, "low": 13, "high": h_value},
         "600612": {"name": "老凤祥", "type": e_pe, "low": 12, "high": h_value},
-        "000651": {"name": "格力电器", "type": e_pe, "low": 8, "high": h_value},
+        "000651": {"name": "格力电器", "type": e_pe, "low": 7.5, "high": h_value},
         "601899": {"name": "紫金矿业", "type": e_pe, "low": 11, "high": h_value},
         "000338": {"name": "潍柴动力", "type": e_pe, "low": 10, "high": h_value},
         "000001": {"name": "平安银行", "type": e_price, "low": 10, "high": h_value},
         "002064": {"name": "华峰化学", "type": e_price, "low": 7, "high": h_value},
         "603259": {"name": "药明康德", "type": e_price, "low": 50, "high": h_value},
-        "300760": {"name": "迈瑞医疗", "type": e_value, "low": 3000*unit, "high": h_value},
+        "300760": {"name": "迈瑞医疗", "type": e_pe, "low": 30, "high": h_value},
         "600938": {"name": "中国海油", "type": e_pe, "low": 7, "high": h_value},
         "603605": {"name": "珀莱雅", "type": e_pe, "low": 20, "high": h_value},
         "002714": {"name": "牧原股份", "type": e_value, "low": 2500*unit, "high": 6000*unit},
