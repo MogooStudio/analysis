@@ -21,7 +21,7 @@ stock_all = {  # 股票数据
         "601166": {"name": "兴业银行", "type": e_pb, "low": 0.6, "high": h_value},
         "600309": {"name": "万华化学", "type": e_pe, "low": 13, "high": h_value},
         "002372": {"name": "伟星新材", "type": e_pe, "low": 20, "high": h_value},
-        "600436": {"name": "片仔癀", "type": e_pe, "low": 40, "high": h_value},
+        "600436": {"name": "片仔癀", "type": e_pe, "low": 35, "high": h_value},
         "000568": {"name": "泸州老窖", "type": e_price, "low": 115, "high": h_value},
         "603288": {"name": "海天味业", "type": e_pe, "low": 34, "high": h_value},
         "600176": {"name": "中国巨石", "type": e_pe, "low": 15, "high": h_value},
